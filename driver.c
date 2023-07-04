@@ -10,7 +10,7 @@
 int ASCII_TABLE[128][CHAR_HEIGHT][CHAR_WIDTH] = {
     // Implement the bitmap for each character
     // Example bitmap for the character 'A'
-    {
+    [65] = {
         {0, 1, 1, 1, 0},
         {1, 0, 0, 0, 1},
         {1, 0, 0, 0, 1},
@@ -19,6 +19,7 @@ int ASCII_TABLE[128][CHAR_HEIGHT][CHAR_WIDTH] = {
         {1, 0, 0, 0, 1},
         {1, 0, 0, 0, 1}
     }
+    // Other character definitions go here...
 };
 
 // Delay function
@@ -33,7 +34,7 @@ void delay(unsigned int milliseconds) {
 }
 
 // Function to move the laser to a specific position
-void sweepLaser() {
+void sweepLaser(int x, int y) {
     // Implement the low-level code to move the laser to the desired position
     // This code is hardware-dependent and should be implemented accordingly.
 }
@@ -46,7 +47,7 @@ void setLaserState(int state) {
 
 // Function to display a dot at the specified position
 void displayDot(int x, int y) {
-    sweepLaser();
+    sweepLaser(x, y);
     setLaserState(1);
     delay(10);  // Adjust the delay as needed
     setLaserState(0);
@@ -54,7 +55,12 @@ void displayDot(int x, int y) {
 
 // Function to display a character
 void displayCharacter(char character) {
-    int(*bitmap)[CHAR_WIDTH] = ASCII_TABLE[character];
+    int bitmap[CHAR_HEIGHT][CHAR_WIDTH];
+    for (int i = 0; i < CHAR_HEIGHT; i++) {
+        for (int j = 0; j < CHAR_WIDTH; j++) {
+            bitmap[i][j] = ASCII_TABLE[(int)character][i][j];
+        }
+    }
     for (int y = 0; y < CHAR_HEIGHT; y++) {
         for (int x = 0; x < CHAR_WIDTH; x++) {
             if (bitmap[y][x] == 1) {
