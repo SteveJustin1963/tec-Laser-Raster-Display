@@ -1,3 +1,5 @@
+#include <stdlib.h>  // for abs function
+
 // Define the size of the display area
 #define AREA_WIDTH 10
 #define AREA_HEIGHT 10
@@ -7,9 +9,17 @@
 #define CHAR_HEIGHT 7
 
 // Define the character bitmap
+// For simplicity, let's define two characters: space (ASCII 32) and 'A' (ASCII 65)
 int ASCII_TABLE[128][CHAR_HEIGHT][CHAR_WIDTH] = {
-    // Implement the bitmap for each character
-    // Example bitmap for the character 'A'
+    [32] = {
+        {0, 0, 0, 0, 0},
+        {0, 0, 0, 0, 0},
+        {0, 0, 0, 0, 0},
+        {0, 0, 0, 0, 0},
+        {0, 0, 0, 0, 0},
+        {0, 0, 0, 0, 0},
+        {0, 0, 0, 0, 0}
+    },
     [65] = {
         {0, 1, 1, 1, 0},
         {1, 0, 0, 0, 1},
@@ -35,14 +45,13 @@ void delay(unsigned int milliseconds) {
 
 // Function to move the laser to a specific position
 void sweepLaser(int x, int y) {
-    // Implement the low-level code to move the laser to the desired position
-    // This code is hardware-dependent and should be implemented accordingly.
+    writePortB(x);
+    writePortC(y);
 }
 
 // Function to turn the laser on or off
 void setLaserState(int state) {
-    // Implement the low-level code to control the laser state
-    // This code is hardware-dependent and should be implemented accordingly.
+    writePortA(state);
 }
 
 // Function to display a dot at the specified position
@@ -80,7 +89,7 @@ void displayString(const char *str) {
 
 int main() {
     // Display the string
-    displayString("Hello, world!");
+    displayString("A A");
 
     return 0;
 }
