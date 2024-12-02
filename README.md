@@ -1,6 +1,11 @@
 # tec-Laser-Raster-Display
 Laser Raster mag-mech-xy
 
+![image](https://github.com/user-attachments/assets/b0f3ac7f-1304-4a97-ba2a-30200f4ecdf7)
+![image](https://github.com/user-attachments/assets/f5f0371c-148f-4980-835c-1c44e7224f84)
+![image](https://github.com/user-attachments/assets/3b032671-82bd-452b-9086-8983af55e912)
+
+
 ![image](https://github.com/user-attachments/assets/e310d747-31a6-493b-8d63-0257bfe31b64)
 
 
@@ -452,3 +457,12 @@ Y             // Y-axis calibration
    - Proper alignment
    - Heat dissipation
    - Beam containment
+  
+# ref
+
+https://hackaday.com/2024/09/18/upgraded-raster-laser-projector-goes-rgb/
+
+![image](https://github.com/user-attachments/assets/5efb9759-01ce-4228-9319-d4888851cbeb)
+
+
+
