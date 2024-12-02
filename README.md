@@ -1,6 +1,7 @@
 # tec-Laser-Raster-Display
 Laser Raster mag-mech-xy
 
+![image](https://github.com/user-attachments/assets/e310d747-31a6-493b-8d63-0257bfe31b64)
 
 
 # TEC-1 Laser Display System: Technical Overview
